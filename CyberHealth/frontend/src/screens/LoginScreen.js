@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
 import "../CSS/LoginScreen.css"
+
 const LoginScreen=()=>{
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
@@ -14,7 +16,11 @@ const LoginScreen=()=>{
                 <br/>
                 <input type="submit"/>
             </form>
-            <h3>New User? Sign Up</h3>
+            <h3>New User?{' '}
+                <Link to={'/SignupScreen'}>
+                    Register
+                </Link>
+            </h3>
 
         </div>
     )

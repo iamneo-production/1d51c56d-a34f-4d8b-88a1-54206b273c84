@@ -11,13 +11,13 @@ const Doctor = ({ doctor }) => {
                 <Card.Img src={doctor.img} variant ='top' />
             </a>
             <Card.Body>
-                <a href={`/doctor/${doctor._id}`}>
+                <Link to={`/doctor/${doctor._id}`}>
                    <Card.Title as='div'>
                        <strong>
                             {doctor.name}
                         </strong>
                    </Card.Title>
-                </a>
+                </Link>
                 <Card.Text>
                     <div className='my-3'>
                         {doctor.rating} from {doctor.numReviews} reviews.
