@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 import "../CSS/SignupScreen.css";
-import LoginScreen from './LoginScreen';
-const SignUp = ()=>{
-    const[uname,setUname]=useState('')
+import { Link } from 'react-router-dom';
+
+const SignupScreen = ()=>{
+    const[username,setUname]=useState('')
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
     const[confirm,setConfirm]=useState('')
@@ -10,7 +11,7 @@ const SignUp = ()=>{
         <div id="header"></div>
         <h1>Sign Up</h1>
         <form>
-        <input type="text" value={uname} placeholder="Enter Username" onChange={(e)=> setUname(e.target.value)}/>
+        <input type="text" value={username} placeholder="Enter Username" onChange={(e)=> setUname(e.target.value)}/>
             <br/>
             <input type="email" value={email} placeholder="Enter Email" onChange={(e)=>setEmail(e.target.value)}/>
             <br/>
@@ -25,8 +26,12 @@ const SignUp = ()=>{
             <br/>
             <input type="submit"/>
         </form>
-        <h3>Already a User?Login</h3>
+        <h3>Already a User?{' '}
+            <Link to={'/LoginScreen'}>
+             Login
+            </Link>
+          </h3>
     </div>
     )
 }
-export default SignUp
+export default SignupScreen
